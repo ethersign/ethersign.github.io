@@ -1,6 +1,6 @@
 {
   "name": "ethersign.github.io",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An offline website used to sign cryptographic challenges for Ethereum",
   "main": "app.js",
   "dependencies": {
