@@ -6,10 +6,10 @@
 
 
 <!-- Loading Bootstrap -->
-<link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Loading Flat UI -->
-<link href="../dist/css/flat-ui.min.css" rel="stylesheet">
+<link href="css/flat-ui.min.css" rel="stylesheet">
 
 <script src="../bundle.js"></script>
 <script src="../app.js"></script>
@@ -18,16 +18,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello, world!</h1>
+        <h1>Sign Cryptographic Challenge</h1>
+
+        Private Key: <input type="text" name="fname" class="input-private-key"><br>
+        Challenge: <input type="text" name="lname" class="input-challenge"><br>
+
+        <div class="btn btn-primary">Sign</div>
+
+        Response: <div class="input-response"></div>
+
+
     </div>
     <!-- /.container -->
 
 
     <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-    <script src="../dist/js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../dist/js/vendor/video.js"></script>
-    <script src="../dist/js/flat-ui.min.js"></script>
+     <script src="js/flat-ui.min.js"></script>
 
   </body>
 </html>
