@@ -5,3 +5,9 @@ A simple way to sign ECDSA pub/priv key pair challenges to prove ownership of an
 
 
 Some ethereum apps may ask you to prove ownership of a particular public address or public key by sending you a cryptographic challenge and then asking you to reply with a signature response.  This response can only be generated using a private key and this should be done offline.  This simple app will generate the proper signature using the challenge and the private key.
+
+
+## developer notes
+Need to use gulp to deploy npm modules into github page ?
+https://medium.com/superhighfives/deploying-to-github-pages-with-gulp-c06efc527de8
+ethereumjs-util package 
