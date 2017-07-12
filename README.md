@@ -16,3 +16,8 @@ make bundle using
 ```
  node_modules/ether-sign/app/ether-sign.js -o bundle.js
  ```
+
+## developer notes
+Need to use gulp to deploy npm modules into github page ?
+https://medium.com/superhighfives/deploying-to-github-pages-with-gulp-c06efc527de8
+ethereumjs-util package  
