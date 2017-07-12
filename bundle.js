@@ -23001,9 +23001,17 @@ $(document).ready(function(){
     var private_key = $('.input-private-key').first().val();
     var challenge = $('.input-challenge').first().val();
 
-    var sig = ethersign.signEllipticCurveChallenge(private_key,challenge)
+    try {
+      var sig = ethersign.signEllipticCurveChallenge(private_key,challenge)
 
-    $(".input-response").html(sig)
+      $(".input-response").html(sig)
+
+      }
+      catch (e) {
+           console.error(e);
+           $(".input-response").html(e.toString())
+      }
+
 
     console.log('clicked btn');
   });
