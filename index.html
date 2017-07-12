@@ -8,12 +8,15 @@
 <!-- Loading Bootstrap -->
 <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
+
 <!-- Loading Flat UI -->
 <link href="css/flat-ui.min.css" rel="stylesheet">
+<link href="css/app.css" rel="stylesheet">
 
-<script src="../bundle.js"></script>
-<script src="../app.js"></script>
 
+
+<script src="bundle.js"></script>
 
 </head>
 <body>
@@ -21,11 +24,17 @@
         <h2>Sign Cryptographic Challenge</h2>
         <p> Be sure to disconnect from the internet when signing using a private key</p>
 
-        Challenge: <input type="text" name="challenge" class="input-challenge form-control"><br>
-        Private Key: <input type="text" name="privkey" class="input-private-key form-control"><br>
-
-        <div class="btn btn-primary">Sign</div><br>
-
+        <div class="row">
+        <div class="col-sm-6">
+          Challenge: <input type="text" name="challenge" class="input-challenge form-control"><br>
+          Private Key: <input type="text" name="privkey" class="input-private-key form-control"><br>
+        </div>
+        <div class="col-sm-6">
+          <div class="btn-sign-container">
+            <div class="btn btn-lg btn-primary btn-sign">Sign</div><br>
+          </div>
+        </div>
+        </div>
         <div class="jumbotron">
           <div class="center"> Signature  </div>
            <div class="input-response"></div>
@@ -36,7 +45,7 @@
 
 
     <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-    <script src="js/vendor/jquery.min.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
      <script src="js/flat-ui.min.js"></script>
 

@@ -1,0 +1,19 @@
+
+.btn-sign-container
+{
+  margin:10px;
+  padding:10px;
+}
+
+.btn-sign
+{
+  font-size: 26px;
+  padding: 30px 60px;
+  margin: 0px;
+  width: 100%;
+}
+
+.input-response
+{
+      word-wrap: break-word;
+}

@@ -1,0 +1,39 @@
+{
+  "name": "ethersign.github.io",
+  "version": "0.1.0",
+  "description": "An offline website used to sign cryptographic challenges for Ethereum",
+  "main": "app.js",
+  "dependencies": {
+    "browserify-shim": "^3.8.14",
+    "ether-sign": "^0.1.1",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethersign/ethersign.github.io.git"
+  },
+  "keywords": [
+    "ethereum"
+  ],
+  "author": "ethersign",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ethersign/ethersign.github.io/issues"
+  },
+  "homepage": "https://github.com/ethersign/ethersign.github.io#readme",
+
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "browserify-shim": {
+    "./js/vendor/jquery.min.js": "$"
+  }
+
+
+}
