@@ -7,7 +7,7 @@ var Eth = require('ethjs')
 
 var Web3 = require('web3')
 
-console.log("booting browserify stuff")
+console.log("test 123")
 
 
 $(document).ready(function(){
@@ -55,8 +55,10 @@ $(document).ready(function(){
   $(".web3-sign-button-container").hide();
 
 
+    console.log('w3 is ')
+  console.log(web3)
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-    if (typeof web3 !== 'undefined') {
+    if (typeof web3 != 'undefined') {
       // Use Mist/MetaMask's provider
       window.web3 = new Web3(web3.currentProvider);
     } else {
@@ -68,6 +70,7 @@ $(document).ready(function(){
 
   if(typeof web3 != 'undefined' )
   {
+    console.log('found web3')
 
 
       $(".web3-sign-button-container").show();
@@ -83,7 +86,14 @@ $(document).ready(function(){
           web3.eth.sign(from, msg, function (err, result) {
             if (err) return console.error(err)
             console.log('SIGNED:' + result)
+
+            var signature = result;
+
+            $(".result-signature").html(new_challenge.toString('hex'));
+
           })
+
+
 
     });
 

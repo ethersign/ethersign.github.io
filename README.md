@@ -20,6 +20,11 @@ browserify js/node/node-app.js -o bundle.js
 
  ```
 
+ run test server
+ ```
+ http-server  -c-1 -a localhost -p 8000
+ ```
+
 ## Test Inputs
 
 Cryptographic Challenge:
