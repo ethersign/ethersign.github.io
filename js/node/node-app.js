@@ -2,6 +2,10 @@ var $ = jQuery = require('jquery');
 var ethersign = require('ether-sign');
 var eth_utils = require('ethereumjs-util');
 
+var sigUtil = require('eth-sig-util')
+var Eth = require('ethjs')
+
+var Web3 = require('web3')
 
 console.log("booting browserify stuff")
 
@@ -46,4 +50,45 @@ $(document).ready(function(){
       }
 
   });
+
+
+  $(".web3-sign-button-container").hide();
+
+
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+    if (typeof web3 !== 'undefined') {
+      // Use Mist/MetaMask's provider
+      window.web3 = new Web3(web3.currentProvider);
+    } else {
+      console.log('No web3? You should consider trying MetaMask!')
+      // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+      window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    }
+
+    var web3 = window.web3;
+
+  if(typeof web3 != 'undefined' && typeof web3.eth != 'undefined'  )
+  {
+
+   
+      $(".web3-sign-button-container").show();
+      $(".no-web3-found-container").hide();
+
+    $(".eth-sign-button").on('click', function(event) {
+      event.preventDefault()
+
+        var msg = $('.input-challenge').first().val();
+
+        var from = web3.eth.accounts[0]
+          web3.eth.sign(from, msg, function (err, result) {
+            if (err) return console.error(err)
+            console.log('SIGNED:' + result)
+          })
+
+    });
+
+  }
+
+
+
 });

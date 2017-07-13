@@ -5,10 +5,13 @@
   "main": "app.js",
   "dependencies": {
     "browserify-shim": "^3.8.14",
+    "eth-sig-util": "^1.2.1",
     "ether-sign": "^0.1.1",
+    "ethjs": "^0.2.7",
     "gulp": "^3.9.1",
     "gulp-gh-pages": "^0.5.4",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "web3": "^0.19.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -27,13 +30,12 @@
     "url": "https://github.com/ethersign/ethersign.github.io/issues"
   },
   "homepage": "https://github.com/ethersign/ethersign.github.io#readme",
-
   "browserify": {
-    "transform": [ "browserify-shim" ]
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "browserify-shim": {
     "./js/vendor/jquery.min.js": "$"
   }
-
-
 }
