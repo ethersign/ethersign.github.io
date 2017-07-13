@@ -23076,7 +23076,14 @@ $(document).ready(function(){
           web3.eth.sign(from, msg, function (err, result) {
             if (err) return console.error(err)
             console.log('SIGNED:' + result)
+
+            var signature = result;
+
+            $(".result-signature").html(new_challenge.toString('hex'));
+
           })
+
+
 
     });
 
