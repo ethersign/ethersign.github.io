@@ -1,5 +1,6 @@
 var $ = jQuery = require('jquery');
 var ethersign = require('ether-sign');
+var eth_utils = require('ethereumjs-util');
 
 
 console.log("booting browserify stuff")
@@ -34,14 +35,14 @@ $(document).ready(function(){
     console.log(challenge)
     try {
 
-      var address_at_pub_key = ethersign.getPublicKeyFromEllipticCurveSignature(challenge,signature);
-
+      var pub_key = ethersign.getPublicKeyFromEllipticCurveSignature(challenge,signature);
+      var address_at_pub_key = eth_utils.addHexPrefix(eth_utils.pubToAddress(pub_key).toString('hex'))
       $(".result-public-address").html(address_at_pub_key.toString('hex'))
 
       }
       catch (e) {
            console.error(e);
-           $(".result-public-address").html(e.toString())
+           $(".result-public-address").html( e.toString())
       }
 
   });

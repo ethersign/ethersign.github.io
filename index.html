@@ -13,7 +13,7 @@
 <!-- Loading Flat UI -->
 <link href="css/flat-ui.min.css" rel="stylesheet">
 <link href="css/app.css" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 
 <script src="bundle.js"></script>
@@ -25,15 +25,18 @@
 
 
       <ul class="nav nav-tabs">
-        <li><a data-toggle="tab" href="#home">Challenge</a></li>
-        <li class="active"><a data-toggle="tab" href="#menu1">Sign</a></li>
+        <li class="active" ><a data-toggle="tab" href="#home">Challenge</a></li>
+        <li><a data-toggle="tab" href="#menu1">Sign</a></li>
         <li><a data-toggle="tab" href="#menu2">Verification</a></li>
       </ul>
 
       <div class="tab-content">
-        <div id="home" class="tab-pane fade ">
+        <div id="home" class="tab-pane fade in active">
 
-          <h2>Generate Random Challenge</h2>
+          <h2>Generate Random Challenges</h2>
+          <p> Prove that you own an Ethereum private key by signing cryptographic challenges that were generated from the <a href="https://github.com/ethersign/ethersign" target="_blank">Ethersign library</a>.</p>
+
+
 
           <div class="row">
 
@@ -50,7 +53,7 @@
         </div>
 
         </div>
-        <div id="menu1" class="tab-pane fade in active">
+        <div id="menu1" class="tab-pane fade ">
 
           <h2>Sign Cryptographic Challenges</h2>
           <p> Prove that you own an Ethereum private key by signing cryptographic challenges that were generated from the <a href="https://github.com/ethersign/ethersign" target="_blank">Ethersign library</a>.</p>
@@ -67,6 +70,9 @@
 
 
             <h2>Verify Cryptographic Challenges</h2>
+            <p> Prove that you own an Ethereum private key by signing cryptographic challenges that were generated from the <a href="https://github.com/ethersign/ethersign" target="_blank">Ethersign library</a>.</p>
+
+
 
             <div class="row">
             <div class="col-sm-6">

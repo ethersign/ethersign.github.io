@@ -14983,7 +14983,7 @@ module.exports={
         "spec": ">=6.0.0 <7.0.0",
         "type": "range"
       },
-      "/home/andy/.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/browserify-sign"
+      "/home/andy/.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/browserify-sign"
     ]
   ],
   "_from": "elliptic@>=6.0.0 <7.0.0",
@@ -15018,7 +15018,7 @@ module.exports={
   "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
   "_shrinkwrap": null,
   "_spec": "elliptic@^6.0.0",
-  "_where": "/home/andy/.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/browserify-sign",
+  "_where": "/home/andy/.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -22990,6 +22990,7 @@ exports.createContext = Script.createContext = function (context) {
 },{"indexof":99}],155:[function(require,module,exports){
 var $ = jQuery = require('jquery');
 var ethersign = require('ether-sign');
+var eth_utils = require('ethereumjs-util');
 
 
 console.log("booting browserify stuff")
@@ -23024,20 +23025,20 @@ $(document).ready(function(){
     console.log(challenge)
     try {
 
-      var address_at_pub_key = ethersign.getPublicKeyFromEllipticCurveSignature(challenge,signature);
-
+      var pub_key = ethersign.getPublicKeyFromEllipticCurveSignature(challenge,signature);
+      var address_at_pub_key = eth_utils.addHexPrefix(eth_utils.pubToAddress(pub_key).toString('hex'))
       $(".result-public-address").html(address_at_pub_key.toString('hex'))
 
       }
       catch (e) {
            console.error(e);
-           $(".result-public-address").html(e.toString())
+           $(".result-public-address").html( e.toString())
       }
 
   });
 });
 
-},{"ether-sign":179,"jquery":204}],156:[function(require,module,exports){
+},{"ether-sign":179,"ethereumjs-util":180,"jquery":204}],156:[function(require,module,exports){
 // Reference https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki
 // Format: 0x30 [total-length] 0x02 [R-length] [R] 0x02 [S-length] [S]
 // NOTE: SIGHASH byte ignored AND restricted, truncate before use
@@ -39820,8 +39821,8 @@ exports.isNumberInInterval = function (number, x, y, message) {
   if (number <= x || number >= y) throw RangeError(message)
 }
 
-}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":101}],220:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":101}],220:[function(require,module,exports){
 'use strict'
 var Buffer = require('safe-buffer').Buffer
 var bip66 = require('bip66')
