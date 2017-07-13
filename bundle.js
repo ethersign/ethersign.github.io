@@ -14983,7 +14983,7 @@ module.exports={
         "spec": ">=6.0.0 <7.0.0",
         "type": "range"
       },
-      "/home/andy/.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/browserify-sign"
+      "/home/andy/.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/browserify-sign"
     ]
   ],
   "_from": "elliptic@>=6.0.0 <7.0.0",
@@ -15018,7 +15018,7 @@ module.exports={
   "_shasum": "cac9af8762c85836187003c8dfe193e5e2eae5df",
   "_shrinkwrap": null,
   "_spec": "elliptic@^6.0.0",
-  "_where": "/home/andy/.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/browserify-sign",
+  "_where": "/home/andy/.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/browserify-sign",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -22996,24 +22996,44 @@ console.log("booting browserify stuff")
 
 
 $(document).ready(function(){
-  $(".btn-sign").on('click',function(){
 
-    var private_key = $('.input-private-key').first().val();
-    var challenge = $('.input-challenge').first().val();
+
+  $(".btn-generate").on('click',function(){
+
 
     try {
-      var sig = ethersign.signEllipticCurveChallenge(private_key,challenge)
+      var new_challenge = ethersign.generateEllipticCurveChallengeDigest( );
 
-      $(".input-response").html(sig)
+      console.log(new_challenge)
+
+      $(".result-challenge").html(new_challenge.toString('hex'));
 
       }
       catch (e) {
            console.error(e);
-           $(".input-response").html(e.toString())
+           $(".result-challenge").html(e.toString())
       }
 
+  });
 
-    console.log('clicked btn');
+  $(".btn-verify").on('click',function(){
+
+    var signature = $('.input-signature').first().val();
+    var challenge = $('.input-challenge-verify').first().val();
+    console.log(signature)
+    console.log(challenge)
+    try {
+
+      var address_at_pub_key = ethersign.getPublicKeyFromEllipticCurveSignature(challenge,signature);
+
+      $(".result-public-address").html(address_at_pub_key.toString('hex'))
+
+      }
+      catch (e) {
+           console.error(e);
+           $(".result-public-address").html(e.toString())
+      }
+
   });
 });
 
@@ -39800,8 +39820,8 @@ exports.isNumberInInterval = function (number, x, y, message) {
   if (number <= x || number >= y) throw RangeError(message)
 }
 
-}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
-},{"../../../../../.nvm/versions/node/v7.10.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":101}],220:[function(require,module,exports){
+}).call(this,{"isBuffer":require("../../../../../.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/is-buffer/index.js")})
+},{"../../../../../.nvm/versions/node/v7.5.0/lib/node_modules/browserify/node_modules/is-buffer/index.js":101}],220:[function(require,module,exports){
 'use strict'
 var Buffer = require('safe-buffer').Buffer
 var bip66 = require('bip66')

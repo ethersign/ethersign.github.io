@@ -21,25 +21,78 @@
 </head>
 <body>
     <div class="container">
-        <h2>Sign Cryptographic Challenges</h2>
-        <p> Prove that you own an Ethereum private key by signing cryptographic challenges that were generated from the <a href="https://github.com/ethersign/ethersign" target="_blank">Ethersign library</a>.</p>
-        <p> Be sure to always disconnect from the internet when signing with a private key! This is 100% offline javascript. </p>
 
-        <div class="row">
-        <div class="col-sm-6">
-          Challenge: <input type="text" name="challenge" class="input-challenge form-control"><br>
-          Private Key: <input type="text" name="privkey" class="input-private-key form-control"><br>
-        </div>
-        <div class="col-sm-6">
-          <div class="btn-sign-container">
-            <div class="btn btn-lg btn-primary btn-sign">Sign</div><br>
+
+
+      <ul class="nav nav-tabs">
+        <li><a data-toggle="tab" href="#home">Challenge</a></li>
+        <li class="active"><a data-toggle="tab" href="#menu1">Sign</a></li>
+        <li><a data-toggle="tab" href="#menu2">Verification</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade ">
+
+          <h2>Generate Random Challenge</h2>
+
+          <div class="row">
+
+          <div class="col-sm-12">
+            <div class="btn-sign-container">
+              <div class="btn btn-lg btn-primary btn-generate">Generate</div><br>
+            </div>
           </div>
-        </div>
-        </div>
+          </div>
+
         <div class="jumbotron">
-          <div class="center"> Signature  </div>
-           <div class="input-response"></div>
+          <div class="center">Challenge  </div>
+           <div class="result-challenge"></div>
         </div>
+
+        </div>
+        <div id="menu1" class="tab-pane fade in active">
+
+          <h2>Sign Cryptographic Challenges</h2>
+          <p> Prove that you own an Ethereum private key by signing cryptographic challenges that were generated from the <a href="https://github.com/ethersign/ethersign" target="_blank">Ethersign library</a>.</p>
+
+          Challenge: <input type="text" name="challenge" class="input-challenge form-control"><br>
+
+
+          <p> Please use Metamask to sign challenges: </p>
+          <a href="https://medium.com/metamask/the-new-secure-way-to-sign-data-in-your-browser-6af9dd2a1527">
+          https://medium.com/metamask/the-new-secure-way-to-sign-data-in-your-browser-6af9dd2a1527
+        </a>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+
+
+            <h2>Verify Cryptographic Challenges</h2>
+
+            <div class="row">
+            <div class="col-sm-6">
+              Challenge: <input type="text" name="challenge" class="input-challenge-verify form-control"><br>
+              Signature: <input type="text" name="signature" class="input-signature form-control"><br>
+            </div>
+            <div class="col-sm-6">
+              <div class="btn-sign-container">
+                <div class="btn btn-lg btn-primary btn-verify">Verify</div><br>
+              </div>
+            </div>
+            </div>
+
+          <div class="jumbotron">
+            <div class="center"> Public Address Of Signature  </div>
+             <div class="result-public-address"></div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
 
     </div>
     <!-- /.container -->
