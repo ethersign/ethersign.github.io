@@ -65,17 +65,17 @@ $(document).ready(function(){
       window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     }
 
-    var web3 = window.web3;
 
-  if(typeof web3 != 'undefined' && typeof web3.eth != 'undefined'  )
+  if(typeof web3 != 'undefined' )
   {
 
-   
+
       $(".web3-sign-button-container").show();
       $(".no-web3-found-container").hide();
 
     $(".eth-sign-button").on('click', function(event) {
-      event.preventDefault()
+      event.preventDefault();
+      console.log('trying to sign')
 
         var msg = $('.input-challenge').first().val();
 
